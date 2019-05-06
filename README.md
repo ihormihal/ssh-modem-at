@@ -55,7 +55,7 @@ Response: ^MONNC: GSM,1,124,0,0,1,-79
 
 - **RAT**: a string indicates the access technology ( GSM / WCDMA / NONE - \<cell_paras\> will not be returned )
 
-chat -V -s -t 5 'ABORT' 'ERROR' 'ABORT' 'NO CARRIER' '' 'AT^MONNC' 'OK' > /dev/ttyUSB0 < /dev/ttyUSB0
+chat -V -s -t 5 'ABORT' 'ERROR' 'ABORT' 'NO CARRIER' '' 'AT\^MONSC' 'OK' > /dev/ttyUSB0 < /dev/ttyUSB0
 
 
 
