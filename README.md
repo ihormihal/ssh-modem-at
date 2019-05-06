@@ -65,3 +65,4 @@ Response: ^MONNC: GSM,1,124,0,0,1,-79
 
 
 
+adb shell input keyevent 82

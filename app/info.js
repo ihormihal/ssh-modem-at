@@ -7,29 +7,33 @@ import ssh from './api/ssh'
 type Props = {};
 export default class Info extends Component<Props> {
 
-    state = {
-        loading: false
-    }
+	state = {
+		loading: false
+	}
 
-    getInfo() {
-        this.setState({ loading: true })
-        ssh.getInfo()
-          .then((result) => {
-            this.setState({ loading: false, result: result })
-          })
-      }
+	getInfo() {
+		this.setState({ loading: true })
+		ssh.getInfo()
+			.then((result) => {
+				alert(result);
+				this.setState({ loading: false, result: result })
+            })
+            .catch((err) => {
+                alert('error');
+            })
+		}
 
-    render() {
-        return (
-            <View style={[theme.container, theme.grid.center]}>
-                <TouchableOpacity style={[theme.button.md, theme.color.primary]} onPress={() => this.getInfo()}>
-                    <Text style={[theme.fontColor.white]}>Get Modem Info</Text>
-                </TouchableOpacity>
+	render() {
+		return (
+			<View style={[theme.container, theme.grid.center]}>
+				<TouchableOpacity style={[theme.button.md, theme.color.primary]} onPress={() => this.getInfo()}>
+					<Text style={[theme.fontColor.white]}>Get Modem Info</Text>
+				</TouchableOpacity>
 
-                { this.state.loading && <ActivityIndicator size="large" color={v.colors.primary} /> }
+				{ this.state.loading && <ActivityIndicator size="large" color={v.colors.primary} /> }
 
-                <Text>{this.state.result}</Text>
-            </View>
-        );
-    }
+				<Text>{this.state.result}</Text>
+			</View>
+		);
+	}
 }

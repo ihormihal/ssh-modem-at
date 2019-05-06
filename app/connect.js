@@ -7,29 +7,34 @@ import ssh from './api/ssh'
 type Props = {};
 export default class Connect extends Component<Props> {
 
-    state = {
-        connecting: false
-    }
+	state = {
+		connecting: false
+	}
 
-    connectModem() {
-        this.setState({ connecting: true })
-        ssh.connectModem()
-          .then(() => {
-            this.setState({ connecting: false })
-            this.props.onConnect()
-            alert('Connected')
-          })
-      }
+	connectModem() {
+		this.setState({ connecting: true })
+		ssh.sshConnect()
+			.then((res) => {
+				this.setState({ connecting: false })
+				this.props.onConnect()
+				alert('Connected')
+            })
+            .catch((err) => {
+                this.setState({ connecting: false })
+                alert(err);
+            })
 
-    render() {
-        return (
-            <View style={[theme.container, theme.grid.center]}>
-                <TouchableOpacity style={[theme.button.md, theme.color.primary]} onPress={() => this.connectModem()}>
-                    <Text style={[theme.fontColor.white]}>Connect Modem</Text>
-                </TouchableOpacity>
+		}
 
-                { this.state.connecting && <ActivityIndicator size="large" color={v.colors.primary} /> }
-            </View>
-        );
-    }
+	render() {
+		return (
+			<View style={[theme.container, theme.grid.center]}>
+				<TouchableOpacity style={[theme.button.md, theme.color.primary]} onPress={() => this.connectModem()}>
+					<Text style={[theme.fontColor.white]}>Connect Modem</Text>
+				</TouchableOpacity>
+
+				{ this.state.connecting && <ActivityIndicator size="large" color={v.colors.primary} /> }
+			</View>
+		);
+	}
 }
