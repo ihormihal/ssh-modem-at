@@ -15,11 +15,12 @@ export default class Info extends Component<Props> {
 		this.setState({ loading: true })
 		ssh.getInfo()
 			.then((result) => {
-				alert(result);
+				console.log(result);
 				this.setState({ loading: false, result: result })
             })
             .catch((err) => {
-                alert('error');
+				alert('error');
+				console.log(err);
             })
 		}
 
