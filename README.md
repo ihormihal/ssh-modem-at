@@ -7,6 +7,8 @@
 ## AT^MONSC
 *–Query Serving Cell Information Through Network Monitor*
 
+echo "AT^MONSC" > /dev/ttyUSB0
+
 Query: AT^MONSC
 Response: ^MONSC: WCDMA,472,99,10738,304,120514,2513,-79,-73,-6,6,0
 
