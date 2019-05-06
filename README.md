@@ -34,7 +34,6 @@ Response: ^MONSC: WCDMA,472,99,10738,304,120514,2513,-79,-73,-6,6,0
 
 - **MCC**: Mobile Country Code, which is a decimal number
 - **MNC**: Mobile Network Code, which is a decimal number
-- **BAND**: Frequency Band, which is a decimal number. The value range is 0–3 ( GSM 850 / GSM 900 / GSM 1800 /  GSM1900)
 - **ARFCN**: Absolute Radio Frequency Channel Number of the BCCH carrier, which is a decimal number. The value range is 0–1023.
 - **PSC**: Primary Scrambling Code, which is a decimal number. The value range is 0–511
 - **Cell_ID**: Cell ID, which is a hexadecimal. The value range is 0–FFFF.
