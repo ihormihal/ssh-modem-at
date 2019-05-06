@@ -5,9 +5,10 @@
 # Cell info
 
 ## AT^MONSC
+*–Query Serving Cell Information Through Network Monitor*
 
-
-response: ^MONSC: WCDMA,472,99,10738,304,120514,2513,-79,-73,-6,6,0
+Query: AT^MONSC
+Response: ^MONSC: WCDMA,472,99,10738,304,120514,2513,-79,-73,-6,6,0
 
 \<CR\>\<LF\>^MONSC:\<RAT\>[,\<cell_paras\>]\<CR\>\<LF\>\<CR\>\<LF\>OK\<CR\>\<LF\>
 
@@ -51,7 +52,7 @@ Response: ^MONNC: GSM,1,124,0,0,1,-79
 
 \<CR\>\<LF\>^MONNC: \<RAT\>[,\<cell_paras\>][\<CR\>\<LF\>^MONNC: \<RAT\>[,\<cell_paras\>]][…]]\<CR\>\<LF\>\<CR\>\<LF\>OK\<CR\>\<LF\>
 
--- **RAT**: a string indicates the access technology ( GSM / WCDMA / NONE - \<cell_paras\> will not be returned )
+- **RAT**: a string indicates the access technology ( GSM / WCDMA / NONE - \<cell_paras\> will not be returned )
 
 
 
